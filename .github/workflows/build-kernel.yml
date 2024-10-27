@@ -27,18 +27,6 @@ jobs:
             CUSTOM_CLANG_SOURCE
             CUSTOM_CLANG_BRANCH
             CUSTOM_CMDS
-            CLANG_BRANCH
-            CLANG_VERSION
-            ENABLE_GCC_ARM64
-            ENABLE_GCC_ARM32
-            USE_CUSTOM_GCC_64
-            CUSTOM_GCC_64_SOURCE
-            CUSTOM_GCC_64_BRANCH
-            CUSTOM_GCC_64_BIN
-            USE_CUSTOM_GCC_32
-            CUSTOM_GCC_32_SOURCE
-            CUSTOM_GCC_32_BRANCH
-            CUSTOM_GCC_32_BIN
             ENABLE_KERNELSU
             KERNELSU_TAG
             ADD_KPROBES_CONFIG
