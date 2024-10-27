@@ -79,7 +79,7 @@ jobs:
           # bash build_kernel_su.sh
 
       - name: Upload Kernel Image
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@latest
         with:
           name: kernel-image
           path: kernel/out/$KERNEL_IMAGE_NAME
