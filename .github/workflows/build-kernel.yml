@@ -189,16 +189,16 @@ jobs:
           echo "LOCALVERSION=" >> $GITHUB_ENV
         fi
 
-    - name: Download source boot image
-      if: env.BUILD_BOOT_IMG == 'true'
+    - name: Download Boot Image
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace
-        curl -H "Authorization: token ${{ secrets.NOX88 }}" -L -o boot-source.img ${{ env.SOURCE_BOOT_IMAGE }}
-        if [ -f boot-source.img ]; then
-            echo "FORMAT_MKBOOTING=$(echo `tools/unpack_bootimg.py --boot_img=boot-source.img --format mkbootimg`)" >> $GITHUB_ENV
-            echo "HAVE_SOURCE_BOOT_IMAGE=true" >> $GITHUB_ENV
+        curl -H "Authorization: token ${{ secrets.NOX88 }}" -L -o boot.img ${{ secrets.BOOT_IMAGE_URL }}
+        if [ -f boot.img ]; then
+            echo "Boot image downloaded successfully."
+        else
+            echo "Failed to download boot image."
+            exit 1
         fi
-
 
     - name: Setup KernelSU
       if: env.ENABLE_KERNELSU == 'true'
